@@ -9,7 +9,5 @@ O objetivo deste trabalho é desenvolver um sistema de controle e gerenciamento 
 
 ### Objetivos
 
-- Manter uma tensão estável de 12V na bateria, conforme especificações técnicas do fabricante.
-- Monitorar e armazenar dados de corrente e tensão para análises de longo prazo.
-- Permitir o acesso local aos dados via aplicativo móvel para monitoramento e controle.
-- Transmitir dados acumulados para um sistema centralizado quando conectado à internet.
+- Receber dados dos sensores de velociade e direção do vento.
+- Transmitir dados para um servidor.
