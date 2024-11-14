@@ -1,4 +1,4 @@
-# Controle_Torre_Eolica_Experimental
+# Controle Torre Eolica Experimental
 
 ## Introdução
 
