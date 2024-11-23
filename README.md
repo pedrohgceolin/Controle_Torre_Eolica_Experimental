@@ -8,7 +8,7 @@ O objetivo deste trabalho é desenvolver um sistema de controle e gerenciamento 
 
 O projeto segue uma arquitetura onde o ESP32 coleta dados dos sensores e posiciona a nacele e os angulos das pás de acordo com os dados coletados. Além do controle, o ESP32 enviará esses dados coletados via protocolo MQTT para plataforma NODE-RED, que recebe os dados e os exibe em um dashboard, permitindo o monitoramento do sistema.
 
-IMAGEM
+![Arquitetura do Projeto](./Sistema de Controle Torre Eólica.png)
 
 ## Hardware:
 
