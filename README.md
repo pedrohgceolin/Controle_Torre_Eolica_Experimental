@@ -28,7 +28,7 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 
 ### Plataforma NODE-RED
 
-O NODE-RED é uma plataforma baseada em Browser para aplicações orientadas a eventos. É responsável pela criação do Broker MQTT (Aedes), além de receber os dados via MQTT, criar uma página WEB onde consta a dashboard, e passar os dados recebidos para o dashboard.
+O NODE-RED é uma plataforma baseada em Browser para aplicações orientadas a eventos. É responsável pela criação do Broker MQTT, além de receber os dados via MQTT, criar uma página WEB onde consta a dashboard, e passar os dados recebidos para o dashboard.
 ![image](https://github.com/user-attachments/assets/8166ffa2-e58d-47e6-82a4-4ad5feec9738)
 ![image](https://github.com/user-attachments/assets/d772308c-2259-4324-8865-a00badf1c3c3)
 
