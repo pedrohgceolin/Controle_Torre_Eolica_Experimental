@@ -19,8 +19,8 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 ### Componentes Utilizados:
 
 - [ESP32 (microcontrolador)]()
-- [Encoder Rotativo (sensor de temperatura e umidade)]()
-- [Sensor de velocidade de rotação (sensor de pressão atmosférica, simulado em ambiente fechado)]()
+- [Encoder Rotativo]()
+- [Sensor de velocidade de rotação]()
 - [Motor de ]()
 - [Anemômetro]()
 - [Biruta]()
