@@ -8,23 +8,29 @@ O objetivo deste trabalho é desenvolver um sistema de controle e gerenciamento 
 
 O projeto segue uma arquitetura onde o ESP32 coleta dados dos sensores e posiciona a nacele e os angulos das pás de acordo com os dados coletados. Além do controle, o ESP32 enviará esses dados coletados via protocolo MQTT para plataforma NODE-RED, que recebe os dados e os exibe em um dashboard, permitindo o monitoramento do sistema.
 
-![Arquitetura do Projeto](./Sistema de Controle Torre Eólica.png)
+<img src="/Sistema de Controle Torre Eólica.png">
 
 ## Hardware:
 
 ### Visão Geral
 
-
-### Estruturação Modular do Projeto:
-
-
+O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar dados de sensores, processá-los e controlar atuadores. Sensores como anemômetro, sensor de direção do vento e medidor de RPM fornecem informações para ajustar automaticamente a posição da nacele e o ângulo das pás, otimizando a eficiência da torre eólica. Atuadores são usados para alinhar a nacele e modificar o ângulo das pás conforme necessário. Além disso, o sistema conta com comunicação via MQTT para enviar dados ao dashboard no Node-RED, permitindo o monitoramento remoto.
 
 ### Componentes Utilizados:
 
-- [ESP32 (microcontrolador)](https://github.com/JulioAmaral007/Biodigestor/tree/main/Sensores/ESP32)
-- [DHT11 (sensor de temperatura e umidade)](https://github.com/JulioAmaral007/Biodigestor/tree/main/Sensores/Sensor-DHT11)
-- [BMP280 (sensor de pressão atmosférica, simulado em ambiente fechado)](https://github.com/JulioAmaral007/Biodigestor/tree/main/Sensores/Sensor-BMP280)
-- [MQ-2 (sensor de gás)](https://github.com/JulioAmaral007/Biodigestor/tree/main/Sensores/Sensor-MQ2)
+- [ESP32 (microcontrolador)]()
+- [Encoder Rotativo (sensor de temperatura e umidade)]()
+- [Sensor de velocidade de rotação (sensor de pressão atmosférica, simulado em ambiente fechado)]()
+- [Motor de ]()
+- [Anemômetro]()
+- [Biruta]()
+
+
+### Plataforma NODE-RED
+
+O NODE-RED é uma plataforma baseada em Browser para aplicações orientadas a eventos. É responsável pela criação do Broker MQTT (Aedes), além de receber os dados via MQTT, criar uma página WEB onde consta a dashboard, e passar os dados recebidos para o dashboard.
+![image](https://github.com/user-attachments/assets/8166ffa2-e58d-47e6-82a4-4ad5feec9738)
+
 
 
 ### Objetivos
