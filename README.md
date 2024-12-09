@@ -18,12 +18,10 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 
 ### Componentes Utilizados:
 
-- [ESP32 (microcontrolador)]()
+- [ESP-32 NodeMCU (microcontrolador)]()
 - [Encoder Rotativo]()
-- [Sensor de velocidade de rotação]()
-- [Motor de ]()
-- [Anemômetro]()
-- [Biruta]()
+- [Sensor de Velocidade de Rotação Infra-Vermelho]()
+- [Servo Motores]()
 
 
 ### Plataforma NODE-RED
