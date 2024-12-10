@@ -1,4 +1,4 @@
-# ESP32
+# Encoder de rotação infravermelho
 ![image](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Sensor%20de%20Velocidade%20de%20Rota%C3%A7%C3%A3o/sensorencoder.jpeg)
 
 O [encoder de rotação infravermelho](https://www.makerhero.com/img/files/download/LM393-Datasheet.pdf) é um sensor que usa luz infravermelha para detectar movimentos rotacionais. Ele é comum em sistemas de controle de posição e velocidade, como impressoras 3D, robôs e motores elétricos.
