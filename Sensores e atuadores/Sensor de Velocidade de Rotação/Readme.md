@@ -5,15 +5,15 @@ O [encoder de rotação infravermelho](https://www.makerhero.com/img/files/downl
  ## Como Funciona:
 
 Disco Codificado:
-O encoder possui um disco com padrões de marcações (faixas claras e escuras).
+O encoder possui um disco com padrões de marcações (buracos).
 O disco é acoplado a um eixo rotativo.
 
 Sensor Infravermelho:
 Um emissor de luz infravermelha ilumina o disco.
-Um receptor infravermelho detecta a luz refletida ou bloqueada pelas faixas do disco.
+Um receptor infravermelho detecta a luz bloqueada ou que passou pelas faixas do disco.
 
 Geração de Pulsos:
-Quando o disco gira, as faixas claras e escuras alternam, criando uma sequência de pulsos elétricos.
+Quando o disco gira, a luz que passa e a que é bloqueada se alternam, criando uma sequência de pulsos elétricos.
 A frequência desses pulsos indica a velocidade de rotação.
 A ordem dos pulsos em dois canais (A e B) indica a direção do movimento.
 
