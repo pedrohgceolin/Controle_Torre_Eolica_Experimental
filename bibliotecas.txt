@@ -1,0 +1,6 @@
+Bibliotecas utilizadas no Arduino IDE:
+-WiFi.h
+-PubSubClient.h
+-ESP32Servo.h
+-ESP32Encoder.h
+-Preferences.h
