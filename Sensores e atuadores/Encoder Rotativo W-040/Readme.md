@@ -1,7 +1,7 @@
 # ESP32
-![image-removebg-preview (1)](https://github.com/JulioAmaral007/Biodigestor/blob/main/Sensores/ESP32/esp-32.png)
+![image-removebg-preview (1)](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20W-040/encoderW040.jpeg)
 
-O [ESP32 DevKit V1](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) é uma das placas de desenvolvimento criadas para avaliar o módulo ESP-WROOM-32. Baseia-se no microcontrolador ESP32 que inclui suporte a Wifi, Bluetooth, Ethernet e baixo consumo de energia, tudo em um único chip.
+O [Encoder incremental W-040](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) O encoder W 040 é um dispositivo usado para medir posição, velocidade ou direção de movimento em sistemas eletromecânicos. Ele é comum em aplicações como automação industrial, controle de motores e sistemas robóticos.
 
 O ESP32 já possui antena integrada e balun RF, amplificador de potência, amplificadores de baixo ruído, filtros e módulo de gestão de energia. A solução completa ocupa a menor quantidade possível de espaço em placa de circuito impresso. Esta placa utiliza chips Wi-Fi e Bluetooth de modo duplo 2.4 GHz da TSMC com tecnologia de baixo consumo de 40nm, oferecendo as melhores propriedades de potência e RF, o que é seguro, confiável e escalável para uma variedade de aplicações.
 
