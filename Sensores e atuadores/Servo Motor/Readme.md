@@ -3,6 +3,18 @@
 
 Um servo motor rotativo é um tipo de motor que realiza movimento rotacional contínuo ou em ângulos limitados, dependendo de sua configuração. Ele é usado em aplicações que exigem controle preciso de posição, velocidade ou torque, sendo comum em robótica, automação industrial e sistemas de controle.
 
+##Como Funciona um Servo Motor Rotativo
+Sinal de Controle (PWM):
+Recebe um sinal PWM (Modulação por Largura de Pulso).
+A largura do pulso determina a posição (para servo de rotação limitada) ou a direção e velocidade (para rotação contínua).
+
+Feedback Interno:
+Um potenciômetro interno mede a posição do eixo (nos de rotação limitada).
+Um circuito de controle compara a posição atual com a desejada e ajusta o motor.
+
+Motor e Engrenagens:
+Um motor DC ou AC aciona um conjunto de engrenagens para aumentar o torque e reduzir a velocidade.
+
 ## Especificações
 | Pino                                | Pino no ESP32                     |
 |-------------------------------------|-----------------------------------|
