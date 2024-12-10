@@ -27,32 +27,44 @@ A ordem dos pulsos em dois canais (A e B) indica a direção do movimento.
 
 ## Bibliotecas
 
-Não foi necessário;
+Não foi necessário.
 
 ## Código:
 
 ```bash
-#include <ESP32Encoder.h>
+#define ENCODER_PIN_A 25  // Sinal do encoder
 
-ESP32Encoder encoder;
+volatile long pulseCount = 0;
+unsigned long lastTime;
+float rpm;
 
-#define CLK 22
-#define DT  23
+void IRAM_ATTR handleEncoder() {
+  pulseCount++;  // Incrementa pulsos ao detectar borda
+}
 
 void setup() {
   Serial.begin(115200);
+
+  pinMode(ENCODER_PIN_A, INPUT_PULLUP);
+
+  attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), handleEncoder, RISING);
   
-  encoder.attachHalfQuad(CLK, DT);  // Pinos CLK e DT
+  lastTime = millis();
   
-  encoder.setCount(0);
 }
 
 void loop() {
-  int contagem = encoder.getCount();
-  Serial.println(contagem);
-  delay(1000);
+  //Calcula RPM a cada segundo
+  unsigned long currentTime = millis();
+  if (currentTime - lastTime >= 1000) {
+    rpm = ((float)pulseCount / 8) * 12.0;
+    Serial.print("RPM: ");
+    Serial.println(rpm);
+    pulseCount = 0;  // Reseta contador
+    lastTime = currentTime;
+  }
 }
 ```
 ## Resultados
 Serial
-![image](https://github.com/user-attachments/assets/d1ff3040-3b90-4c83-8bbc-ed7ff1ac0185)
+![image](https://github.com/user-attachments/assets/5f771697-e281-48d8-8a01-cc1cd6010aac)
