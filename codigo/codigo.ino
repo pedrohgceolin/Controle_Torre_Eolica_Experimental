@@ -5,11 +5,11 @@
 #include <Preferences.h>
 
 // WiFi
-const char* ssid = "Marli WM";
-const char* password = "33891718";
+const char* ssid = "Ceolin PC";
+const char* password = "12345678";
 
 // MQTT
-const char *mqtt_broker = "192.168.0.109"; // Pegar IP do broker no NODE-RED
+const char *mqtt_broker = "192.168.0.115"; // Pegar IP do broker no NODE-RED
 const char *mqtt_username = "";
 const char *mqtt_password = "";
 const int mqtt_port = 1883; // porta padrão
