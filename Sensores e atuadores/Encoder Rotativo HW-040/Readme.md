@@ -6,7 +6,7 @@ O [Encoder incremental HW-040](https://github.com/pedrohgceolin/Controle_Torre_E
 ## Funcionamento Básico:
 Um encoder converte movimento rotacional ou linear em sinais elétricos. Esses sinais são usados por controladores para monitorar e ajustar a posição ou velocidade de um motor ou eixo, neste caso, está sendo usado para monitorara as posições do pitch e do yaw da torre.
 
-## Especificações do encoder do pitch
+## Especificações do encoder do Pitch
 | Pino                                | Pino no ESP32
 |-------------------------------------|-----------------------------------|
 | GND                                 | GND                               |
@@ -15,7 +15,7 @@ Um encoder converte movimento rotacional ou linear em sinais elétricos. Esses s
 | DT                                  | 22                                |
 | CLK                                 | 21                                |
 
-## Especificações do encoder do yaw
+## Especificações do encoder do YAW
 | Pino                                | Pino no ESP32
 |-------------------------------------|-----------------------------------|
 | GND                                 | GND                               |
@@ -23,3 +23,37 @@ Um encoder converte movimento rotacional ou linear em sinais elétricos. Esses s
 | SW                                  | Não Utilizado                     | 
 | DT                                  | 35                                |
 | CLK                                 | 34                                |
+
+## Bibliotecas
+
+```bash 
+  #include <ESP32Encoder.h>
+```
+## Código:
+
+```bash
+#include <ESP32Encoder.h>
+
+ESP32Encoder encoder;
+
+#define CLK 22
+#define DT  23
+
+void setup() {
+  Serial.begin(115200);
+  
+  encoder.attachHalfQuad(CLK, DT);  // Pinos CLK e DT
+  
+  encoder.setCount(0);
+}
+
+void loop() {
+  int contagem = encoder.getCount();
+  Serial.println(contagem);
+  delay(1000);
+}
+```
+## Resultados
+![serial](![image](https://github.com/user-attachments/assets/d1ff3040-3b90-4c83-8bbc-ed7ff1ac0185)
+)
+
