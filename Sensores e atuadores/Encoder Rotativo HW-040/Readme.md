@@ -1,39 +1,25 @@
-# ESP32
-![image-removebg-preview (1)](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20W-040/encoderW040.jpeg)
+# Encoder Rotativo HW-040
+![image-removebg-preview (1)](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20HW-040/encoderW040.jpeg)
 
-O [Encoder incremental W-040](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) O encoder W 040 é um dispositivo usado para medir posição, velocidade ou direção de movimento em sistemas eletromecânicos. Ele é comum em aplicações como automação industrial, controle de motores e sistemas robóticos.
+O [Encoder incremental HW-040](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20HW-040/Rotary%20Encoder.pdf) é um dispositivo usado para medir posição, velocidade ou direção de movimento em sistemas eletromecânicos. Ele é comum em aplicações como automação industrial, controle de motores e sistemas robóticos.
 
-O ESP32 já possui antena integrada e balun RF, amplificador de potência, amplificadores de baixo ruído, filtros e módulo de gestão de energia. A solução completa ocupa a menor quantidade possível de espaço em placa de circuito impresso. Esta placa utiliza chips Wi-Fi e Bluetooth de modo duplo 2.4 GHz da TSMC com tecnologia de baixo consumo de 40nm, oferecendo as melhores propriedades de potência e RF, o que é seguro, confiável e escalável para uma variedade de aplicações.
+## Funcionamento Básico:
+Um encoder converte movimento rotacional ou linear em sinais elétricos. Esses sinais são usados por controladores para monitorar e ajustar a posição ou velocidade de um motor ou eixo, neste caso, está sendo usado para monitorara as posições do pitch e do yaw da torre.
 
-### Layout do Flash
-O flash interno do módulo ESP32 é organizado em uma única área de flash com páginas de 4096 bytes cada. O flash começa no endereço 0x00000, mas muitas áreas são reservadas para o SDK IDF do Esp32. Existem dois layouts diferentes baseados na presença de suporte BLE.
+## Especificações do encoder do pitch
+| Pino                                | Pino no ESP32
+|-------------------------------------|-----------------------------------|
+| GND                                 | GND                               |
+| +                                   | 3V3                               |
+| SW                                  | Não Utilizado                     | 
+| DT                                  | 22                                |
+| CLK                                 | 21                                |
 
-### Energia
-A energia para o ESP32 DevKit V1 é fornecida através do conector USB Micro B a bordo ou diretamente pelo pino "VIN". A fonte de energia é selecionada automaticamente.
-
-O dispositivo pode operar com uma fonte de alimentação externa de 6 a 20 volts. Se usar mais de 12V, o regulador de tensão pode superaquecer e danificar o dispositivo. A faixa recomendada é de 7 a 12 volts.
-
-### Conectar, Registrar, Virtualizar e Programar
-O ESP32 DevKit V1 vem com um chip serial-para-USB a bordo que permite programar e abrir o UART do módulo ESP32. Dependendo do seu sistema (Mac ou Windows), podem ser necessários drivers que podem ser baixados da página de documentação oficial da Espressif. Em sistemas Linux, o DevKit V1 deve funcionar imediatamente.
-
-![image](https://github.com/JulioAmaral007/Biodigestor/blob/main/Sensores/ESP32/esp32.png)
-
-## Especificações
-| INFORMAÇÃO                          | ESP32                                         |
-|-------------------------------------|-----------------------------------------------|
-| PROCESSADOR                         | Tensilica 32-bit Single-/Dual-core CPU Xtensa LX6 |
-| TENSÃO DE OPERAÇÃO                  | 3.3V                                          |
-| TENSÃO DE ENTRADA                   | 7-12V                                         |
-| PINOS DE I/O DIGITAL (DIO)          | 25                                            |
-| PINOS DE ENTRADA ANALÓGICA (ADC)    | 6                                             |
-| PINOS DE SAÍDA ANALÓGICA (DAC)      | 2                                             |
-| UARTs                               | 3                                             |
-| SPIs                                | 2                                             |
-| I2Cs                                | 3                                             |
-| MEMÓRIA FLASH                       | 4 MB                                          |
-| MEMÓRIA SRAM                        | 520 KB                                        |
-| VELOCIDADE DO CLOCK                 | 240 MHz                                       |
-| WI-FI                               | IEEE 802.11 b/g/n/e/i                         |
-| CARACTERÍSTICAS DE WI-FI            | Integrated TR switch, balun, LNA, power amplifier and matching network |
-| SEGURANÇA WI-FI                     | WEP or WPA/WPA2 authentication, or open networks |
-| DIMENSÕES                           | 51.5x29x5mm                                   |
+## Especificações do encoder do yaw
+| Pino                                | Pino no ESP32
+|-------------------------------------|-----------------------------------|
+| GND                                 | GND                               |
+| +                                   | 3V3                               |
+| SW                                  | Não Utilizado                     | 
+| DT                                  | 35                                |
+| CLK                                 | 34                                |
