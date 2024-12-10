@@ -1,0 +1,820 @@
+[
+    {
+        "id": "c7c53bfe9223057c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "debfc968cdb7a852",
+        "type": "mqtt in",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "turbina/velocidade",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0a306ae560e04d27",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "2c47b9380323312b",
+                "f0bb0aa667d920f6"
+            ]
+        ]
+    },
+    {
+        "id": "9a989a2484988ec3",
+        "type": "mqtt in",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "turbina/yaw",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0a306ae560e04d27",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "8a2ae13d391b0229",
+                "6f2c2092783934f0"
+            ]
+        ]
+    },
+    {
+        "id": "2c47b9380323312b",
+        "type": "ui-gauge",
+        "z": "c7c53bfe9223057c",
+        "name": "Velocidade Rotação",
+        "group": "9fc1aab389da1278",
+        "order": 1,
+        "width": "2",
+        "height": "2",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Velocidade Rotação",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 540,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8a2ae13d391b0229",
+        "type": "ui-chart",
+        "z": "c7c53bfe9223057c",
+        "group": "d8123f211e84db2e",
+        "name": "YAW",
+        "label": "YAW",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 490,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cc4d53718c66899",
+        "type": "aedes broker",
+        "z": "c7c53bfe9223057c",
+        "name": "Aedes",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3d806951448e7d7c",
+        "type": "mqtt in",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "turbina/pitch",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0a306ae560e04d27",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "d10f15ce2f51fca2",
+                "3255e785d373cfe5"
+            ]
+        ]
+    },
+    {
+        "id": "d10f15ce2f51fca2",
+        "type": "ui-gauge",
+        "z": "c7c53bfe9223057c",
+        "name": "Pitch",
+        "group": "bf3ae0503b11b338",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Pitch",
+        "units": "graus",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#2be811"
+            },
+            {
+                "from": "10",
+                "color": "#1bed0c"
+            },
+            {
+                "from": "25",
+                "color": "#d6dd0e"
+            },
+            {
+                "from": "45",
+                "color": "#f20d0d"
+            }
+        ],
+        "min": 0,
+        "max": "45",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3255e785d373cfe5",
+        "type": "ui-chart",
+        "z": "c7c53bfe9223057c",
+        "group": "bf3ae0503b11b338",
+        "name": "Pitch",
+        "label": "Pitch",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 490,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0bb0aa667d920f6",
+        "type": "ui-chart",
+        "z": "c7c53bfe9223057c",
+        "group": "9fc1aab389da1278",
+        "name": "Velocidade Rotação",
+        "label": "Velocidade Rotação",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 540,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f2c2092783934f0",
+        "type": "ui-gauge",
+        "z": "c7c53bfe9223057c",
+        "name": "YAW",
+        "group": "d8123f211e84db2e",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            }
+        ],
+        "min": 0,
+        "max": "360",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 490,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "88e9e96f4036c1c2",
+        "type": "mqtt in",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "turbina/motorpitch",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0a306ae560e04d27",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 580,
+        "wires": [
+            [
+                "498a5b3e6eb4bbc1"
+            ]
+        ]
+    },
+    {
+        "id": "498a5b3e6eb4bbc1",
+        "type": "ui-markdown",
+        "z": "c7c53bfe9223057c",
+        "group": "bf3ae0503b11b338",
+        "name": "Motor Pitch",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# Motor do Pitch = {{ msg?.payload }}\n\n",
+        "className": "",
+        "x": 510,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f544f7a83530923",
+        "type": "mqtt in",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "turbina/motoryaw",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0a306ae560e04d27",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 660,
+        "wires": [
+            [
+                "d34d753493ea475b"
+            ]
+        ]
+    },
+    {
+        "id": "d34d753493ea475b",
+        "type": "ui-markdown",
+        "z": "c7c53bfe9223057c",
+        "group": "d8123f211e84db2e",
+        "name": "Motor YAW",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "content": "# Motor do YAW = {{ msg?.payload }}\n\n",
+        "className": "",
+        "x": 510,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a754001995a09c7",
+        "type": "mqtt out",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "topic": "metereologica/direcao",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0a306ae560e04d27",
+        "x": 560,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6ecf7dab2d79ad75",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "str",
+        "x": 250,
+        "y": 760,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "93c5b5e95747964a",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "9",
+        "payloadType": "str",
+        "x": 250,
+        "y": 820,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "811f34ea526c3bf6",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "8",
+        "payloadType": "str",
+        "x": 250,
+        "y": 880,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "3791c89ea0239015",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "7",
+        "payloadType": "str",
+        "x": 250,
+        "y": 940,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "37e0f3900fc915c1",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "6",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1000,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "7a43c3021e2ba2e5",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1060,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "b6bbe9be23a5a070",
+        "type": "inject",
+        "z": "c7c53bfe9223057c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "4",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1120,
+        "wires": [
+            [
+                "6a754001995a09c7"
+            ]
+        ]
+    },
+    {
+        "id": "0a306ae560e04d27",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.109",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9fc1aab389da1278",
+        "type": "ui-group",
+        "name": "Velocidade Rotação",
+        "page": "034865795886cfca",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d8123f211e84db2e",
+        "type": "ui-group",
+        "name": "YAW",
+        "page": "034865795886cfca",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "bf3ae0503b11b338",
+        "type": "ui-group",
+        "name": "Pitch",
+        "page": "034865795886cfca",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "034865795886cfca",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "c18bd8b785ba3d8f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "4f7b653a7e168403",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c18bd8b785ba3d8f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "4f7b653a7e168403",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
