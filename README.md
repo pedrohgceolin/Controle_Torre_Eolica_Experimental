@@ -19,10 +19,22 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 ### Componentes Utilizados:
 
 - [ESP-32 DevKitV1 (microcontrolador)]()
-- [Encoder Rotativo]()
-- [Sensor de Velocidade de Rotação Infra-Vermelho]()
-- [Servo Motores]()
+- [Encoder Rotativo W-040]()
+- [Sensor de Velocidade de Rotação Infra-Vermelho ]()
+- [Servo Motor SM-S4306R]()
 
+## Configuração de Software:
+### Pinagem:
+
+| Pino (Nome no Código) | Número do Pino | Observações                                                                     |
+| --------------------- | -------------- | ------------------------------------------------------------------------------- |
+| `outputServopitch`    | 2              | Utilizado para sinal PWM do motor do pitch                                      |
+| `outputServoYAW`      | 4              | Utilizado para sinal PWM do motor do YAW                                        |
+| `ENCODER_PIN_A`       | 25             | Utlizado para interrupção do Sensor de Velocidade de Rotação Infra-Vermelho     |
+| `CLKpitch`            | 21             | Utilizado como sinal CLK do encoder do pitch                                    |
+| `DTpitch`             | 22             | Utilizado como sinal DT do encoder do pitch                                     |
+| `CLKyaw`              | 21             | Utilizado como sinal CLK do encoder do YAW                                      |
+| `DTyaw`               | 22             | Utilizado como sinal DT do encoder do YAW                                       |
 
 ### Plataforma NODE-RED
 
