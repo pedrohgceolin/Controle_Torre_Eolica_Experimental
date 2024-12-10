@@ -65,7 +65,7 @@ void setup() {
   Serial.begin(115200);
   preferences.begin("Turbina", false);
   unsigned int yaw_flash = preferences.getUInt("yaw_flash", 0);
-  unsigned int pitch_flash = preferences.getUInt("pitch_flash", 10);
+  unsigned int pitch_flash = preferences.getUInt("pitch_flash", 45);
   yaw = yaw_flash;
   pitch = pitch_flash;
   servoPitch.attach(outputServopitch, 500, 2500);
@@ -158,6 +158,13 @@ void callback(char *topic, byte *payload, unsigned int length) {
       conta_direcao = 0;
     }
   }
+
+  client.publish("turbina/motorpitch", String("Motor desligado").c_str(), true);
+  client.publish("turbina/motoryaw", String("Motor desligado").c_str(), true);
+  client.publish("turbina/pitch", String(pitch).c_str(), true);
+  client.publish("turbina/yaw", String(yaw).c_str(), true);
+
+
 }
 
 void loop() {
@@ -234,7 +241,7 @@ void ligarMotorPitch (int direcao, int angulo){
     client.publish("turbina/motorpitch", String("Motor desligado").c_str(), true);
     servoPitch.writeMicroseconds(1500);
   } else if(direcao==1){
-      client.publish("turbina/motorpitch", String("Motor ligado. Sentido Antti-Horário").c_str(), true);
+      client.publish("turbina/motorpitch", String("Motor ligado. Sentido Anti-Horário").c_str(), true);
       servoPitch.writeMicroseconds(1000);
       encoderPitch(angulo);
       client.publish("turbina/motorpitch", String("Motor desligado").c_str(), true);
@@ -305,7 +312,7 @@ void encoderYAW (int x){
     client.publish("turbina/yaw", String(yaw).c_str(), true);
     delay(500);
   }
-  delay(100);  // Atualização lenta para leitura
   preferences.putUInt("yaw_flash", yaw);
+  delay(100);  // Atualização lenta para leitura
 }
 
