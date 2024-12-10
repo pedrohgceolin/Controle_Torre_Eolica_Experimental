@@ -6,10 +6,9 @@ Um servo motor rotativo é um tipo de motor que realiza movimento rotacional con
 ## Especificações
 | Pino                                | Pino no ESP32                     |
 |-------------------------------------|-----------------------------------|
-| VCC                                 | 3V3                               |
+| VCC                                 | Vin                               |
 | GND                                 | GND                               |
-| D0                                  | 25                                | 
-| A0                                  | Não Utilizado                     |
+| D0                                  | 2                                 | 
 
 ## Bibliotecas
 
@@ -32,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  servoPitch.writeMicroseconds(100);
+  servoPitch.writeMicroseconds(1500);
   Serial.println("Parado");
   delay(2000);
   servoPitch.writeMicroseconds(2500);
@@ -48,4 +47,5 @@ void loop() {
 ```
 ## Resultados
 Serial
-![image](https://github.com/user-attachments/assets/5f771697-e281-48d8-8a01-cc1cd6010aac)
+![image](https://github.com/user-attachments/assets/ef0a3af2-5cb4-4032-b228-2658738b72c6)
+
