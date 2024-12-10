@@ -33,8 +33,8 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 | `ENCODER_PIN_A`       | 25             | Utlizado para interrupção do Sensor de Velocidade de Rotação Infra-Vermelho     |
 | `CLKpitch`            | 21             | Utilizado como sinal CLK do encoder do pitch                                    |
 | `DTpitch`             | 22             | Utilizado como sinal DT do encoder do pitch                                     |
-| `CLKyaw`              | 21             | Utilizado como sinal CLK do encoder do YAW                                      |
-| `DTyaw`               | 22             | Utilizado como sinal DT do encoder do YAW                                       |
+| `CLKyaw`              | 35             | Utilizado como sinal CLK do encoder do YAW                                      |
+| `DTyaw`               | 34             | Utilizado como sinal DT do encoder do YAW                                       |
 
 ### Plataforma NODE-RED
 
