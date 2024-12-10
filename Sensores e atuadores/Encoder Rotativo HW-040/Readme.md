@@ -54,6 +54,7 @@ void loop() {
 }
 ```
 ## Resultados
-![serial](![image](https://github.com/user-attachments/assets/d1ff3040-3b90-4c83-8bbc-ed7ff1ac0185)
-)
+Serial
+![image](https://github.com/user-attachments/assets/d1ff3040-3b90-4c83-8bbc-ed7ff1ac0185)
+
 
