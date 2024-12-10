@@ -19,7 +19,7 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 ### Componentes Utilizados:
 
 - [ESP-32 DevKitV1 (microcontrolador)](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/tree/main/Sensores%20e%20atuadores/ESP32)
-- [Encoder Rotativo W-040](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/tree/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20W-040)
+- [Encoder Rotativo HW-040](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/tree/main/Sensores%20e%20atuadores/Encoder%20Rotativo%20W-040)
 - [Sensor de Velocidade de Rotação Infra-Vermelho ](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/tree/main/Sensores%20e%20atuadores/Sensor%20de%20Velocidade%20de%20Rota%C3%A7%C3%A3o)
 - [Servo Motor SM-S4306R](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/tree/main/Sensores%20e%20atuadores/Servo%20Motor)
 
