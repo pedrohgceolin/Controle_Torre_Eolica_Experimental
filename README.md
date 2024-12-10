@@ -40,5 +40,32 @@ O sistema utiliza o microcontrolador ESP32 como núcleo principal para coletar d
 
 O NODE-RED é uma plataforma baseada em Browser para aplicações orientadas a eventos. É responsável pela criação do Broker MQTT, além de receber os dados via MQTT, criar uma página WEB onde consta a dashboard, e passar os dados recebidos para o dashboard.
 ![image](https://github.com/user-attachments/assets/b60e41ac-28d1-4a55-86d6-d01f91dd5b94)
+
+### Dashboard Monitoramento
+
 ![image](https://github.com/user-attachments/assets/a235ccc9-2ad5-4261-83fd-98e05beb57a9)
 
+### Programa Final:
+
+A pasta Programas [codigo/codigo.ino]() contém o código-fonte consolidado que será executado no ESP32. Inclui a integração dos códigos de todos os sensores utilizados.
+
+## Instruções de Execução:
+
+Para executar o projeto localmente, siga estas etapas:
+
+1. **Pré-requisitos**:
+   - Instale a última versão da Arduino IDE a partir do [site oficial](https://www.arduino.cc/en/software).
+   - Configure a Arduino IDE para suportar o ESP32 seguindo as instruções disponíveis na [documentação do ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html).
+   - Instale todas as bibliotecas necessárias mencionadas no arquivo [bibliotecas](./bibliotecas.txt).
+
+2. **Execução da Aplicação**:
+   - **Carregar o Código no ESP32**:
+     1. Conecte o ESP32 ao seu computador.
+     2. Abra o Arduino IDE.
+     3. Carregue o código no ESP32.
+        - [Código Final]()
+   - **Monitoramento via Node-Red**:
+     1. Instale o Node-Red em seu computador, pelo website [Node-Red](https://nodered.org/)
+     2. Assim que estiver instalado e rodando, baixe o [arquivo .json](), e faça upload.
+     3. Faça o deploy.
+     4. Agora terá acesso a dashboard gerada pelo Node-Red, pelo endereço [http://127.0.0.1:1880/dashboard/](http://127.0.0.1:1880/dashboard/), e todas os nodes, podendo mudar ou configurar da forma que quiser.
