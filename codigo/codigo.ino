@@ -196,7 +196,7 @@ void loop() {
 }
 
 void velocidade_pas(){
-  //Calcula RPM a cada segundo
+  //Calcula RPM a cada 5 segundos
   unsigned long currentTime = millis();
   if (currentTime - lastTime >= 5000) {
     rpm_pas_anterior = rpm_pas;
