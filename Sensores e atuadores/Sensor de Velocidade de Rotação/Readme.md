@@ -1,39 +1,58 @@
 # ESP32
-![image-removebg-preview (1)](https://github.com/JulioAmaral007/Biodigestor/blob/main/Sensores/ESP32/esp-32.png)
+![image](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Sensor%20de%20Velocidade%20de%20Rota%C3%A7%C3%A3o/sensorencoder.jpeg)
 
-O [ESP32 DevKit V1](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) é uma das placas de desenvolvimento criadas para avaliar o módulo ESP-WROOM-32. Baseia-se no microcontrolador ESP32 que inclui suporte a Wifi, Bluetooth, Ethernet e baixo consumo de energia, tudo em um único chip.
+O [encoder de rotação infravermelho](https://www.makerhero.com/img/files/download/LM393-Datasheet.pdf) é um sensor que usa luz infravermelha para detectar movimentos rotacionais. Ele é comum em sistemas de controle de posição e velocidade, como impressoras 3D, robôs e motores elétricos.
+ ## Como Funciona:
 
-O ESP32 já possui antena integrada e balun RF, amplificador de potência, amplificadores de baixo ruído, filtros e módulo de gestão de energia. A solução completa ocupa a menor quantidade possível de espaço em placa de circuito impresso. Esta placa utiliza chips Wi-Fi e Bluetooth de modo duplo 2.4 GHz da TSMC com tecnologia de baixo consumo de 40nm, oferecendo as melhores propriedades de potência e RF, o que é seguro, confiável e escalável para uma variedade de aplicações.
+Disco Codificado:
+O encoder possui um disco com padrões de marcações (faixas claras e escuras).
+O disco é acoplado a um eixo rotativo.
 
-### Layout do Flash
-O flash interno do módulo ESP32 é organizado em uma única área de flash com páginas de 4096 bytes cada. O flash começa no endereço 0x00000, mas muitas áreas são reservadas para o SDK IDF do Esp32. Existem dois layouts diferentes baseados na presença de suporte BLE.
+Sensor Infravermelho:
+Um emissor de luz infravermelha ilumina o disco.
+Um receptor infravermelho detecta a luz refletida ou bloqueada pelas faixas do disco.
 
-### Energia
-A energia para o ESP32 DevKit V1 é fornecida através do conector USB Micro B a bordo ou diretamente pelo pino "VIN". A fonte de energia é selecionada automaticamente.
-
-O dispositivo pode operar com uma fonte de alimentação externa de 6 a 20 volts. Se usar mais de 12V, o regulador de tensão pode superaquecer e danificar o dispositivo. A faixa recomendada é de 7 a 12 volts.
-
-### Conectar, Registrar, Virtualizar e Programar
-O ESP32 DevKit V1 vem com um chip serial-para-USB a bordo que permite programar e abrir o UART do módulo ESP32. Dependendo do seu sistema (Mac ou Windows), podem ser necessários drivers que podem ser baixados da página de documentação oficial da Espressif. Em sistemas Linux, o DevKit V1 deve funcionar imediatamente.
-
-![image](https://github.com/JulioAmaral007/Biodigestor/blob/main/Sensores/ESP32/esp32.png)
+Geração de Pulsos:
+Quando o disco gira, as faixas claras e escuras alternam, criando uma sequência de pulsos elétricos.
+A frequência desses pulsos indica a velocidade de rotação.
+A ordem dos pulsos em dois canais (A e B) indica a direção do movimento.
 
 ## Especificações
-| INFORMAÇÃO                          | ESP32                                         |
-|-------------------------------------|-----------------------------------------------|
-| PROCESSADOR                         | Tensilica 32-bit Single-/Dual-core CPU Xtensa LX6 |
-| TENSÃO DE OPERAÇÃO                  | 3.3V                                          |
-| TENSÃO DE ENTRADA                   | 7-12V                                         |
-| PINOS DE I/O DIGITAL (DIO)          | 25                                            |
-| PINOS DE ENTRADA ANALÓGICA (ADC)    | 6                                             |
-| PINOS DE SAÍDA ANALÓGICA (DAC)      | 2                                             |
-| UARTs                               | 3                                             |
-| SPIs                                | 2                                             |
-| I2Cs                                | 3                                             |
-| MEMÓRIA FLASH                       | 4 MB                                          |
-| MEMÓRIA SRAM                        | 520 KB                                        |
-| VELOCIDADE DO CLOCK                 | 240 MHz                                       |
-| WI-FI                               | IEEE 802.11 b/g/n/e/i                         |
-| CARACTERÍSTICAS DE WI-FI            | Integrated TR switch, balun, LNA, power amplifier and matching network |
-| SEGURANÇA WI-FI                     | WEP or WPA/WPA2 authentication, or open networks |
-| DIMENSÕES                           | 51.5x29x5mm                                   |
+| Pino                                | Pino no ESP32                     |
+|-------------------------------------|-----------------------------------|
+| VCC                                 | 3V3                               |
+| GND                                 | GND                               |
+| D0                                  | 25                                | 
+| A0                                  | Não Utilizado                     |
+
+## Bibliotecas
+
+Não foi necessário;
+
+## Código:
+
+```bash
+#include <ESP32Encoder.h>
+
+ESP32Encoder encoder;
+
+#define CLK 22
+#define DT  23
+
+void setup() {
+  Serial.begin(115200);
+  
+  encoder.attachHalfQuad(CLK, DT);  // Pinos CLK e DT
+  
+  encoder.setCount(0);
+}
+
+void loop() {
+  int contagem = encoder.getCount();
+  Serial.println(contagem);
+  delay(1000);
+}
+```
+## Resultados
+Serial
+![image](https://github.com/user-attachments/assets/d1ff3040-3b90-4c83-8bbc-ed7ff1ac0185)
