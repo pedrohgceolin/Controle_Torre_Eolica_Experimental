@@ -1,5 +1,5 @@
 # Servo Motor
-![image-removebg-preview (1)](https://github.com/JulioAmaral007/Biodigestor/blob/main/Sensores/ESP32/esp-32.png)
+[image](https://github.com/pedrohgceolin/Controle_Torre_Eolica_Experimental/blob/main/Sensores%20e%20atuadores/Servo%20Motor/servomotor.jpeg)
 
 Um servo motor rotativo é um tipo de motor que realiza movimento rotacional contínuo ou em ângulos limitados, dependendo de sua configuração. Ele é usado em aplicações que exigem controle preciso de posição, velocidade ou torque, sendo comum em robótica, automação industrial e sistemas de controle.
 
