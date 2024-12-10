@@ -56,6 +56,11 @@ ESP32Encoder encoderYAWLib;
 int pitchTemp = 10;
 unsigned long lastTimePitch;
 unsigned long lastTimeYAW;
+// Pinos CLK e DT
+#define CLKpitch 22
+#define DTpitch 23
+#define CLKyaw 35
+#define DTyaw 34
 
 //Para salvar na memoria
 Preferences preferences;
@@ -118,10 +123,10 @@ void setup() {
   //encoder
   // Inicializa o encoder
   //ESP32Encoder::useInternalWeakPullResistors = UP;
-  encoderPitchLib.attachHalfQuad(22, 23);  // Pinos CLK e DT
+  encoderPitchLib.attachHalfQuad(CLKpitch, DTpitch);  // Pinos CLK e DT
   encoderPitchLib.setCount(pitch);
 
-  encoderYAWLib.attachHalfQuad(35, 34);  // Pinos CLK e DT
+  encoderYAWLib.attachHalfQuad(CLKyaw, DTyaw);  // Pinos CLK e DT
   encoderYAWLib.setCount(yaw);
 
   servoPitch.writeMicroseconds(1500);
