@@ -9,7 +9,7 @@ const char* ssid = "Ceolin PC";
 const char* password = "12345678";
 
 // MQTT
-const char *mqtt_broker = "192.168.0.115"; // Pegar IP do broker no NODE-RED
+const char *mqtt_broker = "150.162.235.48"; // Pegar IP do broker no NODE-RED
 const char *mqtt_username = "";
 const char *mqtt_password = "";
 const int mqtt_port = 1883; // porta padrão
@@ -135,6 +135,10 @@ void setup() {
   for(int i; i<10; i++){
     direcao_mqtt[i] = yaw;
   } 
+  client.publish("turbina/motorpitch", String("Motor desligado").c_str(), true);
+  client.publish("turbina/motoryaw", String("Motor desligado").c_str(), true);
+  client.publish("turbina/pitch", String(pitch).c_str(), true);
+  client.publish("turbina/yaw", String(yaw).c_str(), true);
 }
 
 void callback(char *topic, byte *payload, unsigned int length) {
@@ -159,17 +163,10 @@ void callback(char *topic, byte *payload, unsigned int length) {
     Serial.print("]:");
     Serial.println(direcao_mqtt[conta_direcao]);
     conta_direcao++;
-    if(conta_direcao==10){
+    if(conta_direcao>=10){
       conta_direcao = 0;
     }
   }
-
-  client.publish("turbina/motorpitch", String("Motor desligado").c_str(), true);
-  client.publish("turbina/motoryaw", String("Motor desligado").c_str(), true);
-  client.publish("turbina/pitch", String(pitch).c_str(), true);
-  client.publish("turbina/yaw", String(yaw).c_str(), true);
-
-
 }
 
 void loop() {
@@ -181,7 +178,7 @@ void loop() {
   unsigned long currentTime = millis();
   velocidade_pas();
 
-  if(currentTime - lastTimePitch >= 5000){
+  if(currentTime - lastTimePitch >= 1000){
     log_pitch();
     lastTimePitch = currentTime;
   }
@@ -198,9 +195,10 @@ void loop() {
 void velocidade_pas(){
   //Calcula RPM a cada 5 segundos
   unsigned long currentTime = millis();
-  if (currentTime - lastTime >= 5000) {
+  if (currentTime - lastTime >= 1000) {
+
     rpm_pas_anterior = rpm_pas;
-    rpm_pas = ((float)pulseCount / 8) * 12.0;
+    rpm_pas = ((float)pulseCount / 8) * 60.0;
     Serial.print("RPM: ");
     Serial.println(rpm_pas);
     pulseCount = 0;  // Reseta contador
@@ -217,7 +215,6 @@ void log_pitch(){
     } else if (pitch==25){
       ligarMotorPitch(0,10);
     }
-    pitch = 10;
   } 
   if(rpm_pas >=200 && rpm_pas <300 && pitch !=25){
     if(pitch==45){
@@ -225,7 +222,6 @@ void log_pitch(){
     } else if (pitch==10){
       ligarMotorPitch(1,25);
     }
-    pitch = 25;
   }
   if(rpm_pas < 100 && pitch !=45){
     if(pitch==25){
@@ -233,7 +229,6 @@ void log_pitch(){
     } else if (pitch==10){
       ligarMotorPitch(1,45);
     }
-    pitch = 45;
   }
 }
 
@@ -257,13 +252,15 @@ void ligarMotorPitch (int direcao, int angulo){
 void encoderPitch(int x){
   Serial.println("Entrou encoder Pitch");
   while (encoderPitchLib.getCount()!=x){
-    int valor = encoderPitchLib.getCount();
+    pitch = encoderPitchLib.getCount();
     Serial.println("Pitch em:");
-    Serial.println(valor);
+    Serial.println(pitch);
     // Publica no tópico MQTT
-    client.publish("turbina/pitch", String(valor).c_str(), true);
+    client.publish("turbina/pitch", String(pitch).c_str(), true);
     delay(500);
   }
+  pitch = encoderPitchLib.getCount();
+  client.publish("turbina/pitch", String(pitch).c_str(), true);
   preferences.putUInt("pitch_flash", pitch);
   delay(100);  // Atualização lenta para leitura
 }
@@ -317,6 +314,8 @@ void encoderYAW (int x){
     client.publish("turbina/yaw", String(yaw).c_str(), true);
     delay(500);
   }
+  yaw = encoderYAWLib.getCount();
+  client.publish("turbina/yaw", String(yaw).c_str(), true);
   preferences.putUInt("yaw_flash", yaw);
   delay(100);  // Atualização lenta para leitura
 }
